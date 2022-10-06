@@ -1,4 +1,9 @@
-; 主题
+;;; init-ui.el  --- config for emacs theme
+;;; Commentary:
+;;; @overflow
+;;; Code:
+
+;; 主题
 (use-package doom-themes
   :defer nil
   :config
@@ -41,4 +46,4 @@
 ;; 对外暴露接口
 (provide 'init-ui)
 
-;;; endof init-ui --- end
+;;; init-ui.el ends here

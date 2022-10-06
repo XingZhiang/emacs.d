@@ -1,5 +1,7 @@
-;;; --- there is some package
-;;;
+;;; init-package.el --- config for emacs package
+;;; Commentary:
+;;; @overflow
+;;; Code:
 
 (use-package restart-emacs)
 
@@ -79,3 +81,5 @@
 
 ;暴露外部接口
 (provide 'init-package)
+
+;;; init-package.el ends here

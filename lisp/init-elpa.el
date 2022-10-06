@@ -1,4 +1,9 @@
-;清华镜像源
+;;; init-elpa.el ---  some config of elpa
+;;; Commentary:
+;;; @overflow
+;;; Code:
+
+;;清华镜像源
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
 			 ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
@@ -29,3 +34,5 @@
 
 ;暴露外部接口
 (provide 'init-elpa)
+
+;;; init-elpa.el ends here

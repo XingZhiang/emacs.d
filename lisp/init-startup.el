@@ -1,4 +1,9 @@
-; 一些启动时的配置项目
+;;; init-startup.el  --- some config is loaded when emacs bootstraps
+;;; Commentary:
+;;; @overflow
+;;; Code:
+
+;; 一些启动时的配置项目
 (electric-pair-mode t)                       ; 自动补全括号
 (add-hook 'prog-mode-hook #'show-paren-mode) ; 编程模式下，光标在括号上时高亮另一个括号
 (column-number-mode t)                       ; 在 Mode line 上显示列号
@@ -16,14 +21,14 @@
 (add-to-list 'default-frame-alist '(width . 90))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
 
-; 快速打开配置文件
+;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
 (global-set-key (kbd "<f2>") 'open-init-file)
 
-; 字体编码
+;; 字体编码
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -34,5 +39,7 @@
 (setq gc-cons-threshold most-positive-fixnum)
 
 
-;暴露外部接口
+;; 暴露外部接口
 (provide 'init-startup)
+
+;;; init-startup.el ends here
