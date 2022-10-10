@@ -2,8 +2,9 @@
 ;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; @overflow
-;; This file bootstraps the configuration, which is divided into
-;; a number of other files.
+;;; This file bootstraps the configuration, which is divided into
+;;; a number of other files.
+;;; Code:
 
 ;; 加载配置文件
 (add-to-list 'load-path
@@ -17,6 +18,8 @@
 (require 'init-ui)
 (require 'init-package)
 (require 'init-lsp)
+(require 'init-lang)
+(require 'init-org)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))

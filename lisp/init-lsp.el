@@ -88,12 +88,12 @@
 	 (c++-mode    . (lambda() (require 'dap-cpptools)))))
 
 
-; haskell-mode
-;(use-package haskell-mode
-;  :ensure t
-;  :hook
-;  (haskell-mode . interactive-haskell-mode)
-; (haskell-mode . haskell-indentation-mode))
+;; haskell-mode
+(use-package haskell-mode
+  :ensure t
+  :hook
+ ; (haskell-mode . interactive-haskell-mode)
+  (haskell-mode . haskell-indentation-mode))
 
 
 (provide 'init-lsp)

@@ -15,11 +15,13 @@
 (global-display-line-numbers-mode 1)         ; 在 Window 显示行号
 (tool-bar-mode -1)                           ; 关闭 Tool bar
 (when (display-graphic-p) (toggle-scroll-bar -1)) ; 图形界面时关闭滚动条
-
+(global-hl-line-mode 1)                      ;高亮当前行
 (savehist-mode 1)                            ; （可选）打开 Buffer 历史记录保存
 (setq display-line-numbers-type 'relative)   ; （可选）显示相对行号
 (add-to-list 'default-frame-alist '(width . 90))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
+
+
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -38,6 +40,14 @@
 
 (setq gc-cons-threshold most-positive-fixnum)
 
+;; 设置窗口移动快捷键
+(global-set-key (kbd "C-c <left>") 'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>") 'windmove-up)
+(global-set-key (kbd "C-c <down>") 'windmove-down)
+
+;; 代码折叠
+(add-hook 'prog-mode 'hs-minor-mode)
 
 ;; 暴露外部接口
 (provide 'init-startup)

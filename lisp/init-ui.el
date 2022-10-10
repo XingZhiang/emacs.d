@@ -29,7 +29,6 @@
 
 ;; modeline
 (use-package doom-modeline
-  :ensure t 
   :defer nil
   :init (doom-modeline-mode 1))
 
@@ -42,6 +41,7 @@
   (setq neo-theme 'icons)
   )
 
+;; fira code连字特性
 
 ;; 对外暴露接口
 (provide 'init-ui)

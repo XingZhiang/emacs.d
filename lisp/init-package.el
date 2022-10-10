@@ -54,7 +54,7 @@
   :defer nil
   :init
   (setq ivy-posframe-display-functions-alist
-	'((swiper . ivy-posframe-display-at-frame-center )
+	'((swiper . ivy-display-function-fallback)
 	  (complete-symbol . ivy-posframe-display-at-point)
 	  (counsel-M-x . ivy-posframe-display-at-frame-center)
 	  (counsel-find-file . ivy-posframe-display-at-frame-center)
