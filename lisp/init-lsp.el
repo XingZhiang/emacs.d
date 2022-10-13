@@ -4,8 +4,46 @@
 ;;; Code:
 
 (use-package yasnippet)
+
 (use-package lsp-haskell
   :init(setq  lsp-haskell-server-path "/usr/lib/haskell-language-server-1.8.0.0/bin/haskell-language-server-wrapper"))
+
+
+;; haskell-mode
+(use-package haskell-mode
+  :ensure t
+  :hook
+ ; (haskell-mode . interactive-haskell-mode)
+  (haskell-mode . haskell-indentation-mode))
+
+
+;; Enable scala-mode for highlighting, indentation and motion commands
+(use-package scala-mode
+  :ensure t
+  :interpreter ("scala" . scala-mode))
+
+(use-package lsp-metals
+  :ensure t
+  :custom
+  ;; Metals claims to support range formatting by default but it supports range
+  ;; formatting of multiline strings only. You might want to disable it so that
+  ;; emacs can use indentation provided by scala-mode.
+  (lsp-metals-server-args '("-J-Dmetals.allow-multiline-string-formatting=off")))
+
+
+;; Enable sbt mode for executing sbt commands
+(use-package sbt-mode
+  :commands (sbt-start sbt-command)
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map)
+   ;; sbt-supershell kills sbt-mode:  https://github.com/hvesalai/emacs-sbt-mode/issues/152
+  (setq sbt:program-options '("-Dsbt.supershell=false")))
+
 
 (use-package lsp-mode
   ;; add prog-mode to lsp instead of adding one by one
@@ -18,6 +56,7 @@
          (js-mode      . lsp-deferred)
          (rust-mode    . lsp-deferred)
 	 (haskell-mode . lsp-deferred)
+	 (scala-mode   . lsp-deferred)
 	 (haskell-literate-mode . lsp-deferred)
 	 (lsp-mode     . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferred)
@@ -70,7 +109,9 @@
 
 
 
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol)
+
 (use-package lsp-treemacs
   :commands lsp-treemacs-errors-list
   :init
@@ -88,12 +129,9 @@
 	 (c++-mode    . (lambda() (require 'dap-cpptools)))))
 
 
-;; haskell-mode
-(use-package haskell-mode
-  :ensure t
-  :hook
- ; (haskell-mode . interactive-haskell-mode)
-  (haskell-mode . haskell-indentation-mode))
+
+(use-package posframe)
+
 
 
 (provide 'init-lsp)
