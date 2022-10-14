@@ -6,3 +6,5 @@ recentf
 tutorial/
 url/
 .lsp-session-v1
+target/
+.bsp/
