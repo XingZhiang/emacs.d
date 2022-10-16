@@ -79,6 +79,10 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 
+;; 区域选择快捷键
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 ;暴露外部接口
 (provide 'init-package)
 
