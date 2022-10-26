@@ -20,13 +20,14 @@
 (require 'init-lsp)
 (require 'init-lang)
 (require 'init-org)
+(require 'init-dap)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
 
+(put 'downcase-region 'disabled nil)
 
 
 ;;; init.el ends here
 
-(put 'downcase-region 'disabled nil)
