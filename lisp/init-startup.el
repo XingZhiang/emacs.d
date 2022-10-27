@@ -21,7 +21,7 @@
 (add-to-list 'default-frame-alist '(width . 90))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
 
-
+(yas-global-mode)
 
 ;; 快速打开配置文件
 (defun open-init-file()

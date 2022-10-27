@@ -40,7 +40,9 @@
 	     ("C-h v" . counsel-describe-variable)
          ("C-x C-f" . counsel-find-file)
          ("C-c f" . counsel-recentf)
-         ("C-c g" . counsel-git)))
+         ("C-c g" . counsel-git)
+	 ("C-c s" . counsel-rg)
+	 ("C-c C-s" . counsel-ag)))
 
 (use-package swiper
   :after ivy
