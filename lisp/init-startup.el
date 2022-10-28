@@ -48,6 +48,10 @@
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 
+;; 快速切换buffer
+(global-set-key (kbd "<mouse-8>") (kbd "C-x <left>")) ;; 罗辑g502的第八个键
+(global-set-key (kbd "<mouse-9>") (kbd "C-x <right>")) ;; 罗辑g502的第九个键
+
 ;; 代码折叠
 (add-hook 'prog-mode 'hs-minor-mode)
 

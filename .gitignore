@@ -12,3 +12,5 @@ target/
 .emacs.desktop
 .emacs.desktop.lock
 transient/
+.extension/
+.dap-breakpoints

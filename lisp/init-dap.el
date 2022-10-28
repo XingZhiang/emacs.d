@@ -3,16 +3,33 @@
 ;;; @overflow
 ;;; Code:
 
+(use-package exec-path-from-shell
+  :ensure
+  :init (exec-path-from-shell-initialize))
+
 (use-package dap-mode
-  :diminish
-  :hook ((lsp-mode    . dap-mode)
-         (dap-mode    . dap-ui-mode)
-	 (dap-mode    . dap-tooltip-mode)
-         (python-mode . (lambda() (require 'dap-python)))
-         (go-mode     . (lambda() (require 'dap-go)))
-	 (c-mode      . (lambda() (require 'dap-cpptools)))
-	 (c++-mode    . (lambda() (require 'dap-cpptools)))))
+  :ensure
+  :config
+  (dap-ui-mode)
+  (dap-ui-controls-mode 1)
+
+  (require 'dap-cpptools)
+  (require 'dap-lldb)
+  (require 'dap-gdb-lldb)
+  ;; installs .extension/vscode
+  (dap-gdb-lldb-setup)
+  (dap-cpptools-setup)
+  
+  (dap-register-debug-template
+   "Rust::LLDB Run Configuration"
+   (list :type "dap-lldb"
+         :request "launch"
+         :name "LLDB::Run"
+	 :gdbpath "rust-lldb"
+         :target nil
+         :cwd nil)))
 
 (provide 'init-dap)
+
 
 ;;; init-dap.el ends here

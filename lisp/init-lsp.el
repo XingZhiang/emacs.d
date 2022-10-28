@@ -8,6 +8,9 @@
 (use-package lsp-haskell
   :init(setq  lsp-haskell-server-path "/usr/lib/haskell-language-server-1.8.0.0/bin/haskell-language-server-wrapper"))
 
+(use-package lua-mode
+  :init(setq lsp-clients-lua-lsp-server-install-dir "/usr/bin"))
+
 (use-package rust-mode)
 
 (setq lsp-rust-server 'rust-analyzer)
@@ -60,6 +63,7 @@
          (rust-mode    . lsp-deferred)
 	 (haskell-mode . lsp-deferred)
 	 (scala-mode   . lsp-deferred)
+	 (lua-mode     . lsp-deferred)
 	 (haskell-literate-mode . lsp-deferred)
 	 (lsp-mode     . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferred)
