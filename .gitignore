@@ -9,3 +9,6 @@ url/
 .lsp-session-v1
 target/
 .bsp/
+.emacs.desktop
+.emacs.desktop.lock
+transient/

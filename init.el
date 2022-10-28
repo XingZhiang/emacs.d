@@ -21,6 +21,7 @@
 (require 'init-lang)
 (require 'init-org)
 (require 'init-dap)
+(require 'init-git)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))

@@ -85,6 +85,11 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+
+;; 打开上次会话
+(use-package session
+  :hook (after-init-hook . session-initialize))
+
 ;暴露外部接口
 (provide 'init-package)
 

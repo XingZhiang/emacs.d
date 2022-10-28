@@ -21,6 +21,8 @@
 (add-to-list 'default-frame-alist '(width . 90))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
 
+(setq kill-whole-line t) ; 行首删除时删除换行符
+(fset 'yes-or-no-p 'y-or-n-p) ;用y/n代替yes/no
 (yas-global-mode)
 
 ;; 快速打开配置文件
@@ -48,6 +50,9 @@
 
 ;; 代码折叠
 (add-hook 'prog-mode 'hs-minor-mode)
+
+;; 打开关闭时session
+ (desktop-save-mode 1)
 
 ;; 暴露外部接口
 (provide 'init-startup)
