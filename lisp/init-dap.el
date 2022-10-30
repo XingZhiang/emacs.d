@@ -22,11 +22,12 @@
   
   (dap-register-debug-template
    "Rust::LLDB Run Configuration"
-   (list :type "dap-lldb"
+   (list :type "lldb"
          :request "launch"
          :name "LLDB::Run"
 	 :gdbpath "rust-lldb"
-         :target nil
+	 :program nil
+	 :target nil
          :cwd nil)))
 
 (provide 'init-dap)

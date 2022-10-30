@@ -87,9 +87,12 @@
 
 
 ;; 打开上次会话
-(use-package session
-  :hook (after-init-hook . session-initialize))
+;; (use-package session
+;;  :hook (after-init-hook . session-initialize))
 
+;; vterm 终端
+(use-package vterm
+    :ensure t)
 
 ;暴露外部接口
 (provide 'init-package)

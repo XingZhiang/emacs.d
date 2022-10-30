@@ -13,7 +13,7 @@
  '(display-line-numbers-type 'relative)
  '(global-display-line-numbers-mode t)
  '(package-selected-packages
-   '(lua-mode lua-lsp exec-path-from-shell helm helm-xref magit session rust-mode lsp-rust-server expand-region lsp-metals scala-mode sbt-mode fira-code-mode org-latex-impatient org-superstar neotree rainbow-delimiters ivy-posframe flycheck counsel ivy-rich ivy drag-stuff crux use-package restart-emacs doom-themes doom-modeline company all-the-icons))
+   '(vterm lua-mode lua-lsp exec-path-from-shell helm helm-xref magit session rust-mode lsp-rust-server expand-region lsp-metals scala-mode sbt-mode fira-code-mode org-latex-impatient org-superstar neotree rainbow-delimiters ivy-posframe flycheck counsel ivy-rich ivy drag-stuff crux use-package restart-emacs doom-themes doom-modeline company all-the-icons))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

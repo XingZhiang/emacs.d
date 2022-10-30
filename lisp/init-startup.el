@@ -56,7 +56,7 @@
 (add-hook 'prog-mode 'hs-minor-mode)
 
 ;; 打开关闭时session
- (desktop-save-mode 1)
+;; (desktop-save-mode 1) ;;实际使用中发现几乎用不到
 
 ;; 暴露外部接口
 (provide 'init-startup)
